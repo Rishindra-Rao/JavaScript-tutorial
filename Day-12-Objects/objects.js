@@ -48,3 +48,35 @@ const bmwCar = new Car("BMW", "X1"); //arguments
 const audiCar = new Car("AUDI", "A8");
 console.log((bmwCar)); //also specifies what kind of object it is because of the constructor
 console.log(audiCar)
+
+console.log(bmwCar instanceof Car);
+
+const person = new Object();
+person.name = "Asutosh";
+person.age = 20;
+console.log(person);
+
+function createUser(name, age) { // everytime a new object is returned
+    return {
+        name,  //Object shorthand used because no key pair value formed but returned as key-value pair
+        age,
+        greet() {
+            console.log(this.name);
+        },
+        message : function() {
+            console.log(`${this.name} is idiot`);
+        }
+
+        /* This code will produce the same result if the parameters are used as keys
+        name : name, 
+        age : age
+        */
+    }
+}
+
+const user1 = createUser("Rishi", 20);
+const user2 = createUser("Adharsh", 20);
+user1.message();
+console.log((user1, user2));
+
+//start from 31:51 Nested Objects
