@@ -128,3 +128,11 @@ fruit = anotherFruit;
 
 console.log(fruit == anotherFruit);  // true
 console.log(fruit === anotherFruit); // true
+
+// static methods
+
+const target = {p:1, a:2}; //override will happen because of same variable
+const source = {a:3, b:5};
+
+const returnedObj = Object.assign(target, source);
+console.log(returnedObj);
