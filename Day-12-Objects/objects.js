@@ -80,3 +80,51 @@ user1.message();
 console.log((user1, user2));
 
 //start from 31:51 Nested Objects
+
+let profile = {
+    name: "Rishindra",
+    college: "VIT-AP",
+    message: function() {
+        console.log(`{this.name} studies at ${this.college}`);
+    },
+    address: {
+        city: "Raipur",
+        pin: 492001,
+        state: "Chhattisgarh",
+        country: "India",
+        greeting: function() {
+            console.log(`Welcome to ${this.country}`);
+        }
+    },
+    //salary: 5000
+    salary: undefined // although property exists it will still go to !profile.salary
+};
+
+console.log(profile.address.pin);
+profile.address.greeting();
+
+console.log(profile.salary); //undefined
+
+console.log("salary" in profile);
+
+if (!profile.salary) { //not undefined is true
+    console.log("the salary property does not exist");
+}
+
+for (let key in profile) {
+    console.log(key);
+    console.log(profile[key]);
+}
+
+console.log(Object.keys(profile));
+
+let fruit = {name: "Mango"}; //XA01 -> address where fruit's value is stored
+let anotherFruit = {name: "Mango"}; //YB01 -> address where anotherFruit's value is stored
+
+console.log(fruit == anotherFruit);  // false
+console.log(fruit === anotherFruit); // false
+
+fruit = anotherFruit;
+
+console.log(fruit == anotherFruit);  // true
+console.log(fruit === anotherFruit); // true
